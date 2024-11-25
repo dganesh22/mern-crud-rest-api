@@ -12,6 +12,9 @@ appRoute.get(`/all`, readAllUser)
 appRoute.get(`/single/:id`, readSingleUser)
 
 // http://localhost:4000/api/user/update/123
+appRoute.put(`/update/:id`, updateUser)
+
+// http://localhost:4000/api/user/update/123
 appRoute.patch(`/update/:id`, updateUser)
 
 // http://localhost:4000/api/user/delete/123
