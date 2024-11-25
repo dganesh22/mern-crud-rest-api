@@ -15,7 +15,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // cors middleware -> cross origin resource sharing 
-app.use(cors())
+const corsOpts = {
+    origin: "*",
+    credentials: true,
+    methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ['Content-Type'],
+    exposedHeaders: ['Content-Type']
+}
+app.use(cors(corsOpts))
 
 // index controller 
 app.get(`/`, async (req, res) => {
